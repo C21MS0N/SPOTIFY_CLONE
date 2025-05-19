@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myText">Welcome to Python Class</p>
+    <h4 id="learnText">I'm Learning Javascript</h4>
+    <div id="newDiv"></div>
+
+    <section>
+        <button>ClickMe</button>
+        <h1>Welcome Everyone</h1>
+    </section>
+
+    <div id="anotherDiv"></div>
+    <div id="secSty"></div>
+
+<script>
+    console.log("Javascript");
+    var thisClass = "Javascript Class"
+
+    thisClass = "Welcome to Javascript"
+    console.log(thisClass);
+
+    let anotherClass = "Python Class"
+    console.log(anotherClass);
+
+    const nextClass = "HTML CSS"
+    console.log(nextClass);
+
+
+    var firstName = "Crimson"
+    console.log(firstName);
+
+    var lastName = "Rebel"
+    console.log(lastName);
+    
+    let ourText = document.getElementById("myText")
+    ourText.innerHTML = "Welcome to Javascript Class"
+
+    var theText = document.getElementById("learnText")
+    theText.innerHTML = "CrimsonSolos"
+    console.log(theText.innerHTML);
+
+    let newDiv = document.getElementById("newDiv")
+    newDiv.innerHTML = `<section>
+        <button>ClickMe</button>
+        <h1>Welcome Everyone</h1>
+    </section>`
+
+ 
+    let secSty = document.getElementById("secSty")
+    secSty.innerHTML =  `<section>
+        <button>ClickMe</button>
+        <h1>Welcome Everyone</h1>
+    </section>`
+
+    let anotherDiv = document.getElementById("anotherDiv")
+    anotherDiv.style.width = "100px"
+    anotherDiv.style.height = "100px"
+    anotherDiv.style.backgroundImage = "linear-gradient(to bottom right, #4a3a61, #4a3a61, #4a3a61, gold)";
+    anotherDiv.style.borderRadius = "10px"
+    anotherDiv.style.color = "white"
+
+    anotherDiv.innerHTML = " Asobi wa owari da"
+    anotherDiv.style.textAlign = "center"
+
+
+    let jSty = "Javascript is goated"
+    alert(jSty)
+
+    let deljSty = "Javascript is peak"
+    confirm(deljSty)
+
+    let userInput = prompt("Enter your name")
+    console.log(userInput);
+
+</script> 
+</body>
+</html>

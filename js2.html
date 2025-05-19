@@ -1,0 +1,260 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="showName">
+
+    </div>
+    <input type="text" id="myDetails">
+    <button onclick="showInputValue()">YOKOSO</button>
+    <div id="pageNumberContainer">
+        <button onclick="subtract()">-</button>
+        <span id="pageNumber">0</span>
+        <button onclick="add()">+</button>
+    </div>
+    <div id="myGradeContainer">
+        <button onclick="showGrade()">Show Grade</button>
+        <span id="gradeDisplay"></span>
+    </div>
+    <input type="number" id="myGrade">
+
+</body>
+</html>
+
+
+
+<script>
+    // String Methods
+
+    // Includes
+    let ugo = `we are the best`
+    console.log(ugo.includes(`best`));
+
+    // Startswith & endsWith
+    console.log(ugo.startsWith(`we are the best`));
+
+    console.log(ugo.endsWith(`we are the best`));
+    
+    // Bullian
+    let Truth = true
+    let Lie = false
+    let statement = 4>3
+
+    console.log(4 > 3);
+    console.log(4 >= 3);
+    console.log(3 >= 3);
+    console.log(4 != 3);
+    console.log(3 != 3);
+    console.log(3 == 3);
+    console.log(3 === `3`);
+
+    let x = 4
+    let y = x 
+    console.log(x == y);
+
+    // Truthy Values
+    let myName = `Crimson`
+    let booLagain = true
+    let anyNumber = 1
+
+    // concatenation
+    let firstName = `Rendabel`
+    let lastName = `Rebel`
+    let fullName = firstName.concat("",lastName,"", "Crimson");
+    console.log(fullName);
+    
+    let secfullName = firstName + "" + lastName
+    console.log(firstName + "" + lastName);
+
+    console.log(secfullName);
+
+    // interpolation
+    let hobby = `Javascript`
+    console.log(`I love ${hobby}`);
+
+    showName.innerHTML = `<h1>I love ${hobby}</h1>`
+
+    let a = 3
+    let b = 7
+    console.log(`The addition of ${a} and ${b} = ${a + b}`);
+
+    // Length
+    let ans = `The addition of ${a} and ${b} = ${a + b}`
+    console.log(ans.length);
+
+    // LastIndexOf
+    console.log(hobby[hobby.length - 1]);
+
+    // UpperCase&LowerCase
+    console.log(hobby.toUpperCase());
+    console.log(hobby.toLowerCase());
+
+    console.log(myDetails.value);
+
+    function showInputValue() {
+        console.log(myDetails.value.toLowerCase().trim());
+    }
+
+    // Trim
+    let myText = `   Hello World   `
+    console.log(myText.trim());
+
+    // Replace
+    let myText2 = `Hello World`
+    console.log(myText2.replace(`World`, `Crimson`));
+
+    // Slice
+    let myText3 = `Asobi wa Owari da Tsukamaeta`
+    console.log(myText3.slice(6));
+    console.log(myText3.slice(9, 14));
+
+    // Split
+    let myText4 = `Ryoiki tenkai fukuma mizushi`
+    console.log(myText4.split(``));
+
+    // ASSIGNMENT
+    function showInputValue() {
+    const badWords = [`bastard`, `shit`, `fuck`];
+    let inputValue = myDetails.value.toLowerCase().trim();
+
+    console.log(inputValue);
+    badWords.forEach(word => {
+        const regex = new RegExp(`\\b${word}\\b`, 'gi');
+        inputValue = inputValue.replace(regex, '#'.repeat(word.length));
+    });
+
+    console.log(inputValue);
+}
+
+let num1 = 10.123
+let num2 = 20
+
+console.log(Number(num1) + Number(num2));
+
+let r = 7
+let t = Math.PI * r**2
+console.log(t)
+
+
+
+let operatorEx = true && true
+console.log(operatorEx)
+
+let classEx = 4 > 3 && 3 != "3"
+
+let roomEX = 0 !== '' && NaN !== NaN && 3 !== "3"
+
+let operatorOr = false || true
+console.log(operatorOr)
+
+
+// Conditional Statements
+let check = 4 > 8
+if (!check) {
+    console.log("True");
+} 
+else {
+    console.log("False");
+}
+let indexer = 0
+let pageNumber = document.getElementById("pageNumber")
+function subtract() {
+    indexer --
+    console.log(indexer);
+    pageNumber.innerHTML = indexer
+    if (indexer <= 0) {
+        indexer = 5
+        pageNumber.innerHTML = 5
+    }
+    else {
+        indexer--
+    }
+}
+function add() {
+    indexer ++
+    console.log(indexer);
+    pageNumber.innerHTML = indexer
+    if (indexer >= 5) {
+        indexer = 0
+        pageNumber.innerHTML = 0
+    }
+    else {
+        indexer++
+    }
+
+    if(!true) {
+        console.log("No be Lie!");
+    } else {
+        console.log("Cap");
+    }
+}
+
+
+
+
+// else if summer, winter, spring, autumn, monsoon, cloudy
+
+let checker = `Summer`
+if (checker === `rainy`)
+{
+    console.log("You are in the rainy season");
+} else if (checker === `winter`) {
+    console.log("You are in the winter season"); 
+} else if (checker === `spring`) {
+    console.log("You are in the spring season");
+} else if (checker === `autumn`) {
+    console.log("You are in the autumn season");
+} else if (checker === `monsoon`) {
+    console.log("You are in the monsoon season");
+} else if (checker === `cloudy`) {
+    console.log("You are in the cloudy season");
+} else {
+    console.log("Get Tanned!");
+}
+function showGrade() {
+    let myGrade = document.getElementById("myGrade").value
+    let gradeDisplay = document.getElementById("gradeDisplay")
+    if (myGrade >= 90 && myGrade <= 100) {
+        gradeDisplay.innerHTML = "A";
+        gradeDisplay.style.color = "blue";
+    } else if (myGrade >= 80 && myGrade < 90) {
+        gradeDisplay.innerHTML = "B";
+        gradeDisplay.style.color = "green";
+    } else if (myGrade >= 70 && myGrade < 80) {
+        gradeDisplay.innerHTML = "C";
+        gradeDisplay.style.color = "orange";
+    } else if (myGrade >= 60 && myGrade < 70) {
+        gradeDisplay.innerHTML = "D";
+        gradeDisplay.style.color = "yellow";
+    } 
+    else if (myGrade >= 0 && myGrade < 50) {
+        gradeDisplay.innerHTML = "E";
+        gradeDisplay.style.color = "black";
+    } else if (myGrade < 0 || myGrade > 100) {
+        gradeDisplay.innerHTML = "Invalid Grade";
+        gradeDisplay.style.color = "red";
+    } else {
+        gradeDisplay.innerHTML = "F";
+        gradeDisplay.style.color = "red";
+    }
+    console.log(gradeDisplay.innerHTML);
+}
+
+
+</script>
+
+
+
+
+<!-- Parsaint
+Number Constructor
+Adding the plus saign -->
+
+READ ON TRUTHY VALUE AND FALSY VALUE
+
+
+
+

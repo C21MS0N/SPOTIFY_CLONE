@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify-Style Layout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="test-style.css" />
+  <link rel="icon" href="spotify-white-icon.png">
+  <!-- Web Awesome Core -->
+  <link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+>
+
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+>
+
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+>
+
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+>
+
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+>
+
+<link
+  rel="stylesheet"
+  href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">
+      <img src="spotify-white-icon.png" alt="Logo" class="logo" />
+      <button class="icon-btn"><i class="fa-sharp fa-light fa-house"></i></button>
+      <div class="search-bar">
+        <i class="fa-light fa-magnifying-glass"></i>
+        <input type="text" placeholder="What do you want to play?" style="font-size: medium; font-weight: 500; color: #eff4ee;" />
+        <div class="popupCtrl">
+          <div><p>Ctrl</p></div>
+          <div><p>K</p></div>
+        </div>
+        <div class="boxarchive">
+          <i class="fa-light fa-box-archive"></i>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <button class="btn-premium">Explore Premium</button>
+      <button class="icon-text"><i class="fa-light fa-download"></i> Install App</button>
+      <i class="fa-light fa-bell" id="bellIcon"></i>
+      <div class="avatar">R</div>
+    </div>
+  </div>
+
+  <div class="layout" id="layout">
+    <div class="sidebar left" id="leftSidebar" style="transition: all 0.3s ease;">
+      <div class="library-header">
+        <div class="library-title">
+          <i class="fa-thin fa-books"></i>
+          <span>Your Library</span>
+        </div>
+        <i class="fa-sharp fa-solid fa-circle-plus"></i>
+      </div>
+
+      <div class="library-filters">
+        <button class="chip active">Artists</button>
+        <!-- Add more chips if needed -->
+      </div>
+
+      <div class="library-search-sort">
+        <i class="fas fa-search"></i>
+        <span class="sort">Recents <i class="fas fa-list-ul"></i></span>
+      </div>
+
+      <div class="library-items">
+        <div class="library-item">
+          <div class="liked-songs-gradient">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div>
+            <p class="title">Liked Songs</p>
+            <p class="subtitle"><i class="fa-duotone fa-solid fa-map-pin"></i> Playlist • 1 song</p>
+          </div>
+        </div>
+
+        <div class="library-item">
+          <img src="spotprof3.webp" />
+          <div>
+            <p class="title">The Kid LAROI</p>
+            <p class="subtitle">Artist</p>
+          </div>
+        </div>
+
+        <div class="library-item">
+          <img src="spotprof2.webp" />
+          <div>
+            <p class="title">Panic! At The Disco</p>
+            <p class="subtitle">Artist</p>
+          </div>
+        </div>
+
+        <div class="library-item">
+          <img src="spotprof1.webp" />
+          <div>
+            <p class="title">Céline Dion</p>
+            <p class="subtitle">Artist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content" style="flex: 1; transition: all 0.3s ease;">
+      <div class="scroll-section">
+        <div class="scroll-header">
+          <div class="scroll-tags">
+            <div class="tag active">All</div>
+            <div class="tag">Music</div>
+            <div class="tag">Podcasts</div>
+          </div>
+          <div class="header">
+            <h2>Made For Rendabel Rebel</h2>
+            <a href="#">Show all</a>
+          </div>
+        </div>
+
+        <div class="scroll-container">
+          <!-- Scroll left button -->
+          <button class="scroll-btn left" onclick="scrollCards('left')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <!-- CARD ROW -->
+          <div class="card-row" id="cardRow">
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotpic1.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 01</h4>
+              <p>Tom Odell, Zaho de Sagazan...</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotpic2.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 02</h4>
+              <p>The Kid LAROI, Juice WRLD</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotpic3.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 03</h4>
+              <p>Céline Dion, Majestic</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotpic4.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 04</h4>
+              <p>Panic! At The Disco...</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotcover 2.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 04</h4>
+              <p>Panic! At The Disco...</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotcover 3.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 04</h4>
+              <p>Panic! At The Disco...</p>
+            </div>
+            <div class="music-card">
+              <div class="image-container">
+                <img src="spotcover 4.jpg" alt="Album Cover">
+                <div class="play-button-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <h4>Daily Mix 04</h4>
+              <p>Panic! At The Disco...</p>
+            </div>
+          </div>
+
+          <!-- Scroll right button -->
+          <button class="scroll-btn right" onclick="scrollCards('right')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top: 2rem;">
+        <h2>Your top mixes</h2>
+        <a href="#">Show all</a>
+      </div>
+      <div class="card-row">
+        <div class="music-card">
+          <div class="image-container">
+            <img src="1349642[1].jpeg" alt="Album Cover">
+            <div class="play-button-overlay">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <h4>Discover Weekly</h4>
+          <p>New music recommendations</p>
+        </div>
+        <div class="music-card">
+          <div class="image-container">
+            <img src="5704616.jpg" alt="Album Cover">
+            <div class="play-button-overlay">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <h4>Release Radar</h4>
+          <p>New releases from artists you follow</p>
+        </div>
+        <div class="music-card">
+          <div class="image-container">
+            <img src="cidmug.jpeg" alt="Album Cover">
+            <div class="play-button-overlay">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <h4>Time Capsule</h4>
+          <p>Songs you loved years ago</p>
+        </div>
+        <div class="music-card">
+          <div class="image-container">
+            <img src="koenigsegg_jesko_absolut-3840x2160.jpg" alt="Album Cover">
+            <div class="play-button-overlay">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <h4>Chill Hits</h4>
+          <p>Kick back to these mellow tracks</p>
+        </div>
+        <div class="music-card">
+          <div class="image-container">
+            <img src="rery.jpg" alt="Album Cover">
+            <div class="play-button-overlay">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <h4>Daily Drive</h4>
+          <p>Your commute soundtrack</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar right">
+      <div class="album-preview">
+        <h3 class="section-title">Daily Mix 4</h3>
+        <img style="height: 300px; width: auto; padding-right: 60px;" src="spotcover 3.jpg" alt="Death of a Bachelor Album" class="album-cover">
+        
+        <div class="song-info">
+          <h4>House of Memories</h4>
+          <p>Panic! At The Disco</p>
+          <button class="add-button">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="audio-player">
+    <div class="track-info">
+      <img src="spotcover 3.jpg" alt="Album Art">
+      <div class="track-meta">
+        <div class="track-title">House of Memories</div>
+        <div class="track-artist">Panic! At The Disco</div>
+      </div>
+      <i class="fa-sharp fa-solid fa-circle-plus"></i>
+    </div>
+    <audio id="audio" src="../../../../Downloads/Panic! At The Disco - House of Memories (Official Audio) (256 kbps).mp3"></audio>
+    <div class="player-controls">
+      <div class="controls-top">
+        <i class="fa-duotone fa-solid fa-shuffle"></i>
+        <i class="fa-sharp fa-solid fa-backward-step"></i>
+        <i class="fa-light fa-play"></i>
+        <i class="fa-sharp fa-solid fa-forward-step"></i>
+        <i class="fa-duotone fa-solid fa-message-dots"></i>
+      </div>
+      <div class="progress-container">
+        <span>0:02</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 20%;"></div>
+        </div>
+        <span>3:28</span>
+      </div>
+    </div>
+  
+    <div class="player-options">
+      <i class="fa-duotone fa-regular fa-desktop"></i>
+      <i class="fas fa-microphone"></i>
+      <i class="fa-sharp-duotone fa-regular fa-bars" style="--fa-primary-color: #2ce713; --fa-secondary-color: #f5f5f5;"></i>
+      <i class="fas fa-volume-up"></i>
+      <div class="volume-bar">
+        <div class="volume-fill" style="width: 60%;"></div>
+      </div>
+      <i class="fas fa-expand"></i>
+    </div>
+  </div>
+  
+  <script>
+    const leftSidebar = document.getElementById('leftSidebar');
+    const audio = document.getElementById('audio');
+    const playBtn = document.querySelector('.fa-light.fa-play');
+    const progressFill = document.querySelector('.progress-fill');
+    const volumeFill = document.querySelector('.volume-fill');
+    const progressBar = document.querySelector('.progress-bar');
+    const volumeBar = document.querySelector('.volume-bar');
+    const timeStart = document.querySelector('.progress-container span:first-child');
+    const timeEnd = document.querySelector('.progress-container span:last-child');
+
+    let isPlaying = false;
+
+    function formatTime(seconds) {
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+      return m + ':' + s;
+    }
+
+
+    // Play / Pause toggle
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        playBtn.classList.remove('fa-light', 'fa-pause');
+        playBtn.classList.add('fa-light', 'fa-play');
+      } else {
+        audio.play();
+        playBtn.classList.remove('fa-light','fa-play');
+        playBtn.classList.add('fa-light', 'fa-pause');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Update progress bar
+    audio.addEventListener('timeupdate', () => {
+      const percentage = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = percentage + '%';
+      timeStart.textContent = formatTime(audio.currentTime);
+      timeEnd.textContent = formatTime(audio.duration);
+    });
+
+    // Click to seek
+    progressBar.addEventListener('click', (e) => {
+      const clickX = e.offsetX;
+      const width = progressBar.offsetWidth;
+      const percentage = clickX / width;
+      audio.currentTime = audio.duration * percentage;
+    });
+
+    // Volume control
+    volumeBar.addEventListener('click', (e) => {
+      const clickX = e.offsetX;
+      const width = volumeBar.offsetWidth;
+      const percent = clickX / width;
+      volumeFill.style.width = (percent * 100) + '%';
+      audio.volume = percent;
+    });
+
+    // Enhanced card scrolling functionality
+    function scrollCards(direction) {
+      const row = document.getElementById('cardRow');
+      const scrollAmount = 320; // Matches card width + gap
+      const maxScroll = row.scrollWidth - row.clientWidth;
+      
+      if (direction === 'left') {
+        row.scrollBy({ 
+          left: -scrollAmount, 
+          behavior: 'smooth' 
+        });
+      } else {
+        row.scrollBy({ 
+          left: scrollAmount, 
+          behavior: 'smooth' 
+        });
+      }
+      
+      // Update button visibility based on scroll position
+      setTimeout(() => {
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+        
+        leftBtn.style.visibility = row.scrollLeft <= 0 ? 'hidden' : 'visible';
+        rightBtn.style.visibility = row.scrollLeft >= maxScroll - 1 ? 'hidden' : 'visible';
+      }, 300);
+    }
+    
+    // Initialize button visibility
+    document.addEventListener('DOMContentLoaded', () => {
+      const row = document.getElementById('cardRow');
+      const leftBtn = document.querySelector('.scroll-btn.left');
+      const rightBtn = document.querySelector('.scroll-btn.right');
+      
+      leftBtn.style.visibility = 'hidden';
+      rightBtn.style.visibility = row.scrollWidth > row.clientWidth ? 'visible' : 'hidden';
+      
+      // Update on resize
+      window.addEventListener('resize', () => {
+        rightBtn.style.visibility = row.scrollWidth > row.clientWidth ? 'visible' : 'hidden';
+      });
+
+      // Add sidebar toggle functionality
+      document.querySelector('.library-title i').addEventListener('click', () => {
+        const sidebar = document.getElementById('leftSidebar');
+        const layout = document.getElementById('layout');
+        sidebar.classList.toggle('collapsed');
+        layout.classList.toggle('sidebar-collapsed');
+      });
+    });
+  // Add event listener for bell icon shake effect
+  document.getElementById('bellIcon').addEventListener('click', () => {
+    const bell = document.getElementById('bellIcon');
+    bell.classList.add('fa-shake');
+
+    // Optional: remove shake after it plays once (about 1s), so it can re-trigger on next click
+    setTimeout(() => {
+      bell.classList.remove('fa-shake');
+    }, 1000);
+  });
+  </script>
+</body>
+</html>
