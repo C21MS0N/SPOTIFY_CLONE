@@ -121,7 +121,7 @@ body, html {
   
 }
 .popupCtrl{
-  background-color: #12da58;
+  /* background-color: #12da58; */
   color: rgba(255, 255, 255, 0.553);
   height: 35px;
   width: 100px;

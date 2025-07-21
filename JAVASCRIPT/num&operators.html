@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1Tag">Yare Yare</h1>
+</body>
+</html>
+<script>
+    //Number 
+    let num1 = `10`;
+    let num2 = `20`;
+    console.log(Number(num1) + Number(num2));
+    console.log(parseInt(num1) - parseInt(num2));
+
+    //Math object
+    let PI = Math.PI;
+    console.log(PI);
+
+    let min = Math.min(10, 20, 30, 40);
+    console.log(min);
+
+    let max = Math.max(10, 20, 30, 40);
+    console.log(max);
+
+    let round = Math.round(PI);
+    console.log(round);
+
+    let floor = Math.floor(8.999999);    
+    console.log(floor);
+
+    let ceil = Math.ceil(8.0000001);
+    console.log(ceil); 
+
+    let randomNum = Math.floor(Math.random() * 35);
+    console.log(randomNum);
+
+    let randomNum2 = Math.floor(Math.random() * 101) + 100
+    console.log(randomNum2);
+    
+    let randomNum3 = Math.floor(Math.random()) + 7
+    console.log(randomNum3);
+    
+    //Operators
+    // Assignment Operators
+
+    let h1Tag = document.getElementById(`h1Tag`)
+    h1Tag.innerHTML += `, Tsukamaeta!`
+
+    let x = 10;
+    x += 5;
+    console.log(x);
+
+    let y = 20;
+    y -= 5; 
+    console.log(y);
+
+    let z = 30;
+    z *= 5;
+    console.log(z);
+
+    let r = 40;
+    r /= 5;
+    console.log(r);
+
+    //Arithmetic Operators + * / %
+    let a1 = 45;
+    let b1 = 20;
+    console.log(a1 % b1);
+
+    //Comparison Operators
+    let compare1 = 10 > 5;
+    console.log(compare1);
+</script>

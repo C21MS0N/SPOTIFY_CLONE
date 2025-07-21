@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Primitive Data Types
+    let myName = `John Doe`
+    console.log(myName[0]);
+    myName[0] = `Y`
+    console.log(myName)
+    myName = `Adelani`
+
+    // Numbers
+    let myScore = 7.1234
+    let myAvrg = 10
+    console.log(myScore + myAvrg)
+
+    // Boolean
+    let isRaining = true
+    let hasStopped = false
+
+    // Undefined
+    let theirScore
+    console.log(theirScore);
+    theirScore = 100
+
+    // Null 
+    let userData = null
+
+    // Symbols
+    let mySymbol = Symbol(`123`);
+    let anotherSymb = Symbol(`123`);
+
+    // Non Primitive
+    // Arrays
+    let arr = [1, 2, 3, 4, 5, 5]
+    console.log(arr);
+    arr[5] = 10
+    console.log(arr);
+
+    //STRING METHODS
+    let myString = `Hello World, Nah, I'd win`
+    let myString2 = `This isn't "Javascript" class`
+    console.log(myString2.length);
+    let lastIndex = myString2[myString2.length - 17];
+    console.log(lastIndex);
+    //concatenation
+    let firstName = `Crimson`
+    let spcBtw = ` `
+    let surname = `X`
+    let fulName = firstName.concat(spcBtw, surname)
+    console.log(fulName);
+    let fulName2 = firstName + spcBtw + surname
+    console.log(fulName2);
+
+    //Interpolation
+    let sentence = `My name is ${firstName} and my surname is ${surname}`
+    console.log(sentence);
+
+    //replace
+    //ReplaceAll
+    let anotherSentence = `I want to replace all want`
+    let replaced
+    
+    //startWith
+    let myStrings = `Hello Guys`
+    let checkedStart = myStrings.startsWith(`Hello Monkeys`)
+
+    //Endswith
+
+    //slice
+    let nameOfCar = `          Koeniggsegg Jesko is absolut cinema                    `
+    let slicedOut = nameOfCar.slice(12, 17)
+    console.log(slicedOut);
+    let slicedOut2 = nameOfCar.slice(21, 28)
+    console.log(slicedOut2);
+
+    //Split
+    let splittedWord = nameOfCar.split()
+    console.log(splittedWord);
+    let splittedWord2 = nameOfCar.split(``)
+    console.log(splittedWord2);
+    
+    //TRIM
+    let trimmed = nameOfCar.trim()
+    console.log(trimmed);
+    let trimmed2 = nameOfCar.trimStart()
+    console.log(trimmed2);
+    let trimmed3 = nameOfCar.trimEnd()
+    console.log(trimmed3);
+
+    
+    
+    
+     
+    
+    
+    
+    
+    
+     
+    
+    
+    
+</script>

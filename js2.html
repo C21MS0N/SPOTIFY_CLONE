@@ -10,6 +10,7 @@
     </div>
     <input type="text" id="myDetails">
     <button onclick="showInputValue()">YOKOSO</button>
+    <div id="output"></div>
     <div id="pageNumberContainer">
         <button onclick="subtract()">-</button>
         <span id="pageNumber">0</span>
@@ -96,6 +97,7 @@
 
     function showInputValue() {
         console.log(myDetails.value.toLowerCase().trim());
+        output.innerHTML = showInputValue.myDetails
     }
 
     // Trim
@@ -124,6 +126,7 @@
     badWords.forEach(word => {
         const regex = new RegExp(`\\b${word}\\b`, 'gi');
         inputValue = inputValue.replace(regex, '#'.repeat(word.length));
+        let inputValue = innerHTML
     });
 
     console.log(inputValue);
@@ -249,11 +252,10 @@ function showGrade() {
 
 
 
-<!-- Parsaint
+<!-- Parseint
 Number Constructor
-Adding the plus saign -->
+Adding the plus sign -->
 
-READ ON TRUTHY VALUE AND FALSY VALUE
 
 
 
