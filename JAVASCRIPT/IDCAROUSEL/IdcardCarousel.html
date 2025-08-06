@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ID Card Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, #89f7fe, #66a6ff, #a18cd1, #fbc2eb);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-family: 'Alumni Sans SC', sans-serif;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 28px;
+      padding: 15px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    #prevBtn {
+      left: 30px;
+      color: #fbc2eb;
+    }
+
+    #nextBtn {
+      right: 30px;
+    }
+
+    .id-card {
+      width: 280px;
+      height: 450px;
+      background: #fff;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      padding: 15px;
+    }
+
+    .id-card .logo img {
+      width: 100px;
+      margin-top: 5px;
+    }
+
+    .school-name {
+      font-size: 25px;
+      font-weight: bold;
+      color: #003366;
+      line-height: 1.2;
+      margin: 5px 0;
+    }
+
+    .student-label {
+      background: #003366;
+      color: #fff;
+      font-size: 14px;
+      padding: 3px 16px;
+      margin: 8px auto;
+      display: inline-block;
+      border-radius: 4px;
+    }
+
+    .photo {
+      margin: 12px 0;
+    }
+
+    .photo img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #003366;
+      margin-top: 5px;
+    }
+
+    .department {
+      font-size: 17px;
+      font-weight: bold;
+      color: red;
+      margin-top: 2px;
+    }
+
+    .student-id {
+      font-size: 16px;
+      margin-top: 4px;
+    }
+
+    .student-id span {
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #007bff;
+      color: #fff;
+      font-size: 14px;
+      padding: 5px 0;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+  </style>
+</head>
+<body>
+  <button id="prevBtn" class="nav-button"><i class="fa-whiteboard fa-semibold fa-arrow-left"></i></button>
+
+  <div class="id-card" id="card"></div>
+
+  <button id="nextBtn" class="nav-button"><i style="color: #fbc2eb;" class="fa-whiteboard fa-semibold fa-arrow-right"></i></i></button>
+
+  <script>
+    const students = [
+      {
+        name: "SON GOKU(KAKAROT)",
+        department: "CYBER SECURITY",
+        id: "241364",
+        photo: "IMG/gokupfp.jpeg"
+      },
+      {
+        name: "PRINCE VEGETA",
+        department: "SOFTWARE ENGINEERING",
+        id: "241365",
+        photo: "IMG/vegetapfp.jpeg"
+      },
+      {
+        name: "PRINCESS CHICHI",
+        department: "DATA SCIENCE",
+        id: "241366",
+        photo: "IMG/chichipfp.jpeg"
+      },
+      {
+        name: "BULMA BRIEFS",
+        department: "UI/UX(PRODUCT) DESIGN",
+        id: "241367",
+        photo: "IMG/bulmapfp.jpeg"
+      },
+      {
+        name: "SON GOHAN",
+        department: "ROBOTICS ENGINEERING",
+        id: "241368",
+        photo: "IMG/gohanpfp.jpeg"
+      },
+      {
+        name: "VIDEL SATAN",
+        department: "DIGITAL MARKETING",
+        id: "241369",
+        photo: "IMG/videlpfp.jpeg"
+      },
+      {
+        name: "KRILLIN",
+        department: "DIGITAL LITERACY",
+        id: "241370",
+        photo: "IMG/krillinpfp.jpeg"
+      },
+      {
+        name: "LAZULI 18",
+        department: "ARTIFICIAL INTELLIGENCE",
+        id: "241371",
+        photo: "IMG/18pfp.jpeg"
+      },
+      {
+        name: "TRUNKS BRIEFS",
+        department: "WEB DESIGN",
+        id: "241372",
+        photo: "IMG/trunkspfp.jpeg"
+      },
+      {
+        name: "MAI BRIEFS",
+        department: "HARDWARE ENGINEERING",
+        id: "241373",
+        photo: "IMG/maipfp.jpeg"
+      }
+    ];
+
+    let currentIndex = 0;
+    const total = students.length;
+    const card = document.getElementById("card");
+
+    function renderCard(index) {
+      const student = students[index];
+      card.innerHTML = `
+        <div class="logo">
+          <img src="IMG/sqi_logo-removebg-preview.png" alt="SQI Logo" />
+        </div>
+        <div class="school-name">SQI COLLEGE OF ICT<br>IBADAN</div>
+        <div class="student-label">STUDENT</div>
+        <div class="photo">
+          <img src="${student.photo}" alt="Student Photo">
+        </div>
+        <div class="name">${student.name}</div>
+        <div class="department">${student.department}</div>
+        <div class="student-id">Student ID | <span>${student.id}</span></div>
+        <div class="footer">edu.sqi.ng</div>
+      `;
+    }
+
+    document.getElementById("prevBtn").onclick = () => {
+      currentIndex = currentIndex - 1;
+      if (currentIndex < 0) {
+        currentIndex = total - 1;
+      }
+      renderCard(currentIndex);
+    };
+
+    document.getElementById("nextBtn").onclick = () => {
+      currentIndex = currentIndex + 1;
+      if (currentIndex >= total) {
+        currentIndex = 0;
+      }
+      renderCard(currentIndex);
+    };
+
+    renderCard(currentIndex);
+  </script>
+</body>
+</html>
